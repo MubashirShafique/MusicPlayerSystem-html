@@ -132,6 +132,23 @@
             animation: float 5s linear infinite;
         }
         
+        .email-message {
+            background: rgba(88, 166, 255, 0.1);
+            border: 1px solid #58a6ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .email-address {
+            color: #58a6ff;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.1); }
@@ -153,6 +170,11 @@
                 transform: translateY(-100px) rotate(360deg);
                 opacity: 0;
             }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         @media (max-width: 600px) {
@@ -184,7 +206,13 @@
         
         <div class="button-group">
             <a href="https://mubashirshafique.github.io/MusicPlayerSystem-html/thankyou.html" class="btn btn-primary">Reinstall Music Player System</a>
-            <a href="#" class="btn btn-secondary">Tell Us Why You're Leaving</a>
+            <a href="#" class="btn btn-secondary" id="feedback-btn">Tell Us Why You're Leaving</a>
+        </div>
+        
+        <div class="email-message" id="email-message">
+            <p>We'd love to hear your feedback to improve our app!</p>
+            <p class="email-address">mubasirarain214@gmail.com</p>
+            <p>Please email us your thoughts and suggestions.</p>
         </div>
         
         <div class="footer">
@@ -216,6 +244,16 @@
         for (let i = 0; i < 5; i++) {
             setTimeout(createFloatingHeart, i * 300);
         }
+        
+        // Email display functionality
+        document.getElementById('feedback-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const emailMessage = document.getElementById('email-message');
+            emailMessage.style.display = 'block';
+            
+            // Scroll to email message
+            emailMessage.scrollIntoView({ behavior: 'smooth' });
+        });
     </script>
 </body>
 </html>
