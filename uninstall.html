@@ -1,44 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Goodbye from Music Player System</title>
-<style>
-body {
-  background-color: #0d1117;
-  color: #c9d1d9;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding-top: 100px;
-}
-h1 {
-  color: #58a6ff;
-}
-p {
-  color: #8b949e;
-  margin: 20px 0;
-}
-a {
-  color: #58a6ff;
-  text-decoration: none;
-  border: 1px solid #58a6ff;
-  padding: 8px 15px;
-  border-radius: 6px;
-  display: inline-block;
-  margin-top: 30px;
-}
-a:hover {
-  background-color: #58a6ff;
-  color: #0d1117;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We're Sad to See You Go - Music Player System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0d1117 0%, #1a1f2e 100%);
+            color: #c9d1d9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            background: rgba(22, 27, 34, 0.8);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid #30363d;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .broken-heart {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+        
+        h1 {
+            color: #ff6b6b;
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            color: #8b949e;
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .message {
+            background: rgba(255, 107, 107, 0.1);
+            border-left: 4px solid #ff6b6b;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: left;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .message p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .message p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .btn {
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: #58a6ff;
+            color: #0d1117;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background: #79b8ff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(88, 166, 255, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #58a6ff;
+            border: 1px solid #58a6ff;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(88, 166, 255, 0.1);
+        }
+        
+        .footer {
+            margin-top: 40px;
+            color: #8b949e;
+            font-size: 14px;
+            border-top: 1px solid #30363d;
+            padding-top: 20px;
+            width: 100%;
+        }
+        
+        .floating-heart {
+            position: absolute;
+            font-size: 20px;
+            opacity: 0;
+            animation: float 5s linear infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 26px;
+            }
+            
+            .broken-heart {
+                font-size: 60px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>🎵 Thank You for Using Music Player System!</h1>
-  <p>We hope you enjoyed the experience.</p>
-  <p>If you ever change your mind, you can reinstall anytime.</p>
-  <a href="https://mubashirshafique.github.io/MusicPlayerSystem-html/thankyou.html">Reinstall Music Player</a>
-  <p style="margin-top: 40px;">© 2025 Gamma Technologies — Developed by Mubashir, Usman, and Meraj Ali</p>
+    <div class="container">
+        <div class="broken-heart">💔</div>
+        <h1>We're Sad to See You Go</h1>
+        <p class="subtitle">Music Player System will miss creating beautiful moments with you</p>
+        
+        <div class="message">
+            <p>It breaks our heart to say goodbye. We've loved every moment we spent together - from your favorite morning playlist to those late-night study sessions.</p>
+            <p>Your music journey with us might be ending, but the memories will always remain.</p>
+            <p>If you ever change your mind, we'll be here waiting with open arms and your favorite tunes.</p>
+        </div>
+        
+        <div class="button-group">
+            <a href="https://mubashirshafique.github.io/MusicPlayerSystem-html/thankyou.html" class="btn btn-primary">Reinstall Music Player System</a>
+            <a href="#" class="btn btn-secondary">Tell Us Why You're Leaving</a>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Gamma Technologies — Developed with ❤️ by Mubashir, Usman, and Meraj Ali</p>
+        </div>
+    </div>
+
+    <script>
+        // Create floating broken hearts
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.innerHTML = '💔';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            heart.style.fontSize = (Math.random() * 10 + 15) + 'px';
+            document.body.appendChild(heart);
+            
+            // Remove heart after animation completes
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+        
+        // Create hearts periodically
+        setInterval(createFloatingHeart, 800);
+        
+        // Add some initial hearts
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createFloatingHeart, i * 300);
+        }
+    </script>
 </body>
 </html>
